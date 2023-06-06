@@ -1,13 +1,14 @@
+# Importing the Libraries
 import pandas as pd
 import numpy as np
 import datetime
 import yfinance as yf
 import matplotlib.pyplot as plt
 import streamlit as st 
-
+# Taking the stock-data from the dates as 
 start_time = pd.to_datetime('2015-01-01')
 end_time = pd.to_datetime('2022-03-01')
-
+# Accessing the the particular stock which is to be entered
 st.title('MAKE IT REAL')
 st.title('STOCK PRICE PREDICTION')
 user_input = st.text_input("Enter Stock Ticker")
@@ -139,11 +140,11 @@ for i in range(len(pnl_signal)):
   elif pnl_signal[i] == -1.0:
     print(f"The signal is : SELL :{pnl}, for the DAY- {i+1} since loss :{-profit}")
   profit_calc.append(profit)
-
+# Setting up the neutral line
 zero_L=[]
 for i in range(60):
   zero_L.append(0)
-
+# Setting the date timeline
 day_L=[]
 for i in range(59):
   day_L.append(f"Day-{i+1}")
