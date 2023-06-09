@@ -12,8 +12,8 @@ end_time = pd.to_datetime('2022-03-01')
 st.title('MAKE IT REAL')
 st.title('STOCK PRICE PREDICTION')
 user_input = st.text_input("Enter Stock Ticker")
-
-data_acn = yf.download(user_input, start = start_time, end = end_time)
+tickerinput=user_input if user_input else 'ACN' # added to remove the valueerror which shows on starting the app
+data_acn = yf.download(tickerinput, start = start_time, end = end_time)
 
 #Describing the data
 st.subheader('Data from 2015 - 2022')
